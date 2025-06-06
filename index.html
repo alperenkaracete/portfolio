@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Game Developer Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Orbitron', sans-serif;
+      background-color: #0f0f0f;
+      color: #f0f0f0;
+    }
+
+    header {
+      background: #1a1a1a;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    header img {
+      width: 150px;
+      border-radius: 50%;
+      border: 3px solid #66ccff;
+    }
+
+    .social-icons {
+      margin-top: 20px;
+    }
+
+    .social-icons a {
+      margin: 0 10px;
+      display: inline-block;
+    }
+
+    .social-icons img {
+      width: 32px;
+      transition: transform 0.2s;
+    }
+
+    .social-icons img:hover {
+      transform: scale(1.2);
+    }
+
+    .about {
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+      text-align: center;
+    }
+
+    nav {
+      background: #000;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 10px;
+      border-top: 1px solid #333;
+      border-bottom: 1px solid #333;
+    }
+
+    nav button {
+      background: none;
+      border: none;
+      color: #f0f0f0;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    nav button:hover {
+      color: #66ccff;
+    }
+
+    #content {
+      padding: 30px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .card {
+      background: #1a1a1a;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="Images/AlperenVesika.PNG" alt="Profil Resmi">
+    <div class="social-icons">
+      <a href="https://youtube.com/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube"></a>
+      <a href="https://linkedin.com/in/kullanici-adin" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" width="32" height="32"></a>
+      <a href="https://github.com/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="GitHub"></a>
+      <a href="https://www.hackerrank.com/kullanici-adin" target="_blank"><img src="https://cdn.iconscout.com/icon/free/png-256/free-hackerrank-3628885-3030004.png" alt="HackerRank" width="32" height="32"></a>
+      <a href="mailto:mail@ornek.com"><img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email"></a>
+    </div>
+  </header>
+
+  <section class="about">
+    <h2>Hakkımda</h2>
+    <p>
+      Merhaba, ben bir oyun geliştiricisiyim. Unity ve Unreal Engine kullanarak 2D ve 3D oyunlar geliştiriyorum. Oyun mekaniği tasarımı, UI/UX, AI sistemleri gibi konularla ilgileniyorum.
+    </p>
+  </section>
+
+  <nav>
+    <button onclick="showSection('projects')">Projects</button>
+    <button onclick="showCareerTabs()">Career</button>
+    <button onclick="showSection('skills')">Skills</button>
+  </nav>
+
+    <section id="content">
+    <div id="main-content" class="card">
+        <h3>Hoş Geldiniz!</h3>
+        <p>Yukarıdaki menüden bir bölüm seçin.</p>
+    </div>
+    </section>
+
+  <script>
+    const content = document.getElementById('content');
+
+    function showSection(section) {
+      if (section === 'projects') {
+        content.innerHTML = `
+          <div class="card">
+            <h3>🎮 Tank Savaşları</h3>
+            <p>Unreal Engine ile geliştirdiğim tank oyunu. Kule döndürme, nişan alma ve ateş mekanikleri içerir.</p>
+            <a href="https://github.com/kullaniciAdi/tank-savas" target="_blank">→ GitHub</a>
+          </div>
+          <div class="card">
+            <h3>🧩 Puzzle Runner</h3>
+            <p>Unity ile geliştirdiğim mobil bulmaca-aksiyon oyunu.</p>
+            <a href="https://github.com/kullaniciAdi/puzzle-runner" target="_blank">→ GitHub</a>
+          </div>
+        `;
+      } else if (section === 'career') {
+        content.innerHTML = `
+            <div id="main-content">
+            <!-- Burada hakkımda veya diğer ana içerikler olabilir -->
+            <p>Welcome! Click on Career to explore work and education history.</p>
+            </div>
+            <div class="card">
+            <h3>📌 Employment and Internship History</h3>
+
+            <h4>Bosphorus Industrial Software Solutions</h4>
+            <p><strong>July 2024 – October 2024</strong></p>
+            <ul>
+                <li>Used Yocto, RAUC, Yocto SDK, Nginx, C++, C++ REST SDK, ZeroMQ, and React.</li>
+                <li>Developed embedded software solutions for industrial IoT systems.</li>
+            </ul>
+
+            <h4>B2FB2F Research and Development Company</h4>
+            <p><strong>August 2022 – March 2023</strong></p>
+            <ul>
+                <li>Used AL Language and developed systems on Microsoft Dynamics Business Central and NAV.</li>
+            </ul>
+            </div>
+        `;
+      } else if (section === 'skills') {
+        content.innerHTML = `
+            <div class="card">
+            <h3>🛠️ Skills</h3>
+            <h4>Programming Languages</h4>
+            <ul>
+                <li>C, C++, C#</li>
+                <li>Java</li>
+                <li>Python</li>
+                <li>Dart</li>
+                <li>Assembly</li>
+                <li>AL Programming</li>
+            </ul>
+
+            <h4>Frameworks & Game Engines</h4>
+            <ul>
+                <li>Unity</li>
+                <li>Unreal Engine</li>
+                <li>Flutter</li>
+                <li>TensorFlow</li>
+                <li>React</li>
+            </ul>
+
+            <h4>Development Tools & Environments</h4>
+            <ul>
+                <li>Android Studio</li>
+                <li>Jira</li>
+                <li>Git</li>
+                <li>Linux</li>
+                <li>Yocto</li>
+                <li>Nginx</li>
+            </ul>
+
+            <h4>Databases & Backend</h4>
+            <ul>
+                <li>Firebase</li>
+                <li>MySQL</li>
+                <li>SQL</li>
+            </ul>
+
+            <h4>Hardware & Embedded Systems</h4>
+            <ul>
+                <li>Raspberry Pi</li>
+                <li>Arduino</li>
+            </ul>
+            </div>
+        `;
+      }
+    }
+  </script>
+  <script>
+    function showCareerTabs() {
+    content.innerHTML = `
+        <div class="tab-buttons" style="display:flex; flex-direction:column; align-items:center; margin-bottom:1.5rem;">
+        <p style="text-align:center; color:#f0f0f0; font-size:1.1rem; margin-bottom:1rem;">
+            You can find information about my education and career here.
+        </p>
+        <div style="display:flex; justify-content:center; gap:1.5rem;">
+            <button onclick="showCareerSection('work')" style="
+            padding: 0.6rem 1.2rem;
+            border: none;
+            background: linear-gradient(to right, #66ccff, #3399ff);
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s, box-shadow 0.2s;
+            "
+            onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 6px 12px rgba(0,0,0,0.3)';"
+            onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 8px rgba(0,0,0,0.2)';"
+            >Work & Internship</button>
+
+            <button onclick="showCareerSection('education')" style="
+            padding: 0.6rem 1.2rem;
+            border: none;
+            background: linear-gradient(to right, #66ccff, #3399ff);
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s, box-shadow 0.2s;
+            "
+            onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 6px 12px rgba(0,0,0,0.3)';"
+            onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 8px rgba(0,0,0,0.2)';"
+            >Education</button>
+        </div>
+        </div>
+
+        <div id="career-details" class="card" style="background:#1a1a1a; padding:1rem; border-radius:8px;"></div>
+    `;
+    }
+
+  function showCareerSection(section) {
+    const careerDetails = document.getElementById("career-details");
+    if (section === "work") {
+      careerDetails.innerHTML = `
+        <h3>📌 Employment and Internship History</h3>
+
+        <h4>Bosphorus Industrial Software Solutions</h4>
+        <p><strong>July 2024 – October 2024</strong></p>
+        <ul>
+          <li>Used Yocto, RAUC, Yocto SDK, Nginx, C++, C++ REST SDK, ZeroMQ, and React.</li>
+          <li>Developed embedded software solutions for industrial IoT systems.</li>
+        </ul>
+
+        <h4>B2F R&D Company</h4>
+        <p><strong>August 2022 – March 2023</strong></p>
+        <ul>
+          <li>Used AL Language and developed systems on Microsoft Dynamics Business Central and NAV.</li>
+        </ul>
+      `;
+    } else if (section === "education") {
+      careerDetails.innerHTML = `
+        <h3>🎓 Education</h3>
+
+        <h4>Istanbul Medeniyet University</h4>
+        <p><strong>Bachelor of Science in Computer Engineering</strong></p>
+        <p><strong>2019 – 2024</strong></p>
+      `;
+    }
+  }
+  </script>
+
+</body>
+</html>
