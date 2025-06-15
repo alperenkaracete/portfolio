@@ -3,107 +3,255 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Game Developer Portfolio</title>
+  <title>MAK</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
   <style>
-    body {
-      margin: 0;
-      font-family: 'Orbitron', sans-serif;
-      background-color: #0f0f0f;
-      color: #f0f0f0;
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom right, #e0f7ff, #b3e5fc);
+    color: #1a1a1a;
+  }
+
+  header {
+    background: #1a1a1a;
+    text-align: center;
+    padding: 40px 20px;
+  }
+
+  header img {
+    width: 300px;
+    border-radius: 50%;
+    border: 3px solid #66ccff;
+  }
+
+  .social-icons {
+    margin-top: 20px;
+  }
+
+  .social-icons a {
+    margin: 0 10px;
+    display: inline-block;
+  }
+
+  .social-icons img {
+    width: 32px;
+    transition: transform 0.2s;
+  }
+
+  .social-icons img:hover {
+    transform: scale(1.2);
+  }
+
+  .about {
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+    background: #cceeff;
+    border-radius: 8px;
+  }
+
+  nav {
+    background: #cceeff;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px;
+    border-top: 1px solid #3399ff;
+    border-bottom: 1px solid #3399ff;
+  }
+
+  nav button {
+    padding: 0.6rem 1.2rem;
+    background: linear-gradient(to right, #66ccff, #3399ff);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  nav button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  }
+
+  #content {
+    padding: 30px;
+    max-width: 1000px;
+    margin: auto;
+  }
+
+  .card {
+    background: #cceeff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+  }
+  /* Yazı stilleri */
+  .hero-text {
+    margin-bottom: 20px;
+    animation: fadeIn 1.5s ease-in-out;
+  }
+
+  .name {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: #66ccff;
+    margin: 0;
+  }
+
+  .tagline {
+    font-family: 'Arial', sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    color: white;
+    margin-top: 10px;
+  }  
+  /*Animasyon*/
+  @keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  }
+
+  .fade-in {
+    color: white !important;
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards;
+  }
+
+  .fade-in.delay {
+    animation-delay: 0.5s;
+  }
+
+  @media (max-width: 768px) {
+  .name {
+    font-size: 28px;
+  }
+
+  .tagline {
+    font-size: 16px;
+  }
+}
+
+  @media (max-width: 480px) {
+    .name {
+      font-size: 22px;
     }
 
-    header {
-      background: #1a1a1a;
-      text-align: center;
-      padding: 40px 20px;
+    .tagline {
+      font-size: 14px;
     }
+  }
 
-    header img {
-      width: 150px;
-      border-radius: 50%;
-      border: 3px solid #66ccff;
-    }
+  .skills-card {
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    color: black;
+    font-family: 'Orbitron', sans-serif;
+    transition: transform 0.3s ease;
+  }
 
-    .social-icons {
-      margin-top: 20px;
-    }
+  .skills-card:hover {
+    transform: scale(1.02);
+  }
 
-    .social-icons a {
-      margin: 0 10px;
-      display: inline-block;
-    }
+  .card-title {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: black;
+    text-align: center;
+    border-bottom: 2px solid black;
+    padding-bottom: 10px;
+  }
 
-    .social-icons img {
-      width: 32px;
-      transition: transform 0.2s;
-    }
+  .card-title-zero {
+    font-size: 28px;
+    margin-bottom: 0px;
+    color: black;
+    text-align: center;
+    border-bottom: 2px solid black;
+    padding-bottom: 10px;
+  }  
 
-    .social-icons img:hover {
-      transform: scale(1.2);
-    }
+  .skill-heading {
+    font-size: 20px;
+    margin-bottom: 8px;
+    color: black;
+    border-left: 4px solid black;
+    padding-left: 10px;
+  }
 
-    .about {
-      padding: 20px;
-      max-width: 800px;
-      margin: auto;
-      text-align: center;
-    }
+  .skills-card ul {
+    padding-left: 20px;
+    line-height: 1.6;
+    margin: 0;
+    color: black;
+  }
 
-    nav {
-      background: #000;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      padding: 10px;
-      border-top: 1px solid #333;
-      border-bottom: 1px solid #333;
-    }
-
-    nav button {
-      background: none;
-      border: none;
-      color: #f0f0f0;
-      font-size: 16px;
-      cursor: pointer;
-    }
-
-    nav button:hover {
-      color: #66ccff;
-    }
-
-    #content {
-      padding: 30px;
-      max-width: 1000px;
-      margin: auto;
-    }
-
-    .card {
-      background: #1a1a1a;
-      padding: 20px;
-      margin-bottom: 20px;
-      border-radius: 8px;
-    }
+  .skills-card li {
+    list-style-type: "• ";
+  }
 
   </style>
 </head>
 <body>
 
   <header>
-    <img src="Images/AlperenVesika.PNG" alt="Profil Resmi">
+    <div class="hero-text">
+      <h1 class="name">Muhammed Alperen Karaçete</h1>
+      <p class="tagline">Hey there! Welcome to my portfolio.</p>
+    </div>
+    <img src="Images/AlperenVesika.PNG" alt="Profile Picture">
     <div class="social-icons">
-      <a href="https://youtube.com/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube"></a>
-      <a href="https://linkedin.com/in/kullanici-adin" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" width="32" height="32"></a>
-      <a href="https://github.com/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="GitHub"></a>
-      <a href="https://www.hackerrank.com/kullanici-adin" target="_blank"><img src="https://cdn.iconscout.com/icon/free/png-256/free-hackerrank-3628885-3030004.png" alt="HackerRank" width="32" height="32"></a>
-      <a href="mailto:mail@ornek.com"><img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email"></a>
+      <a href="https://www.youtube.com/@alperenkaracetedev" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube"></a>
+      <a href="https://www.linkedin.com/in/muhammedalperenkaracete/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" width="32" height="32"></a>
+      <a href="https://github.com/alperenkaracete" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="GitHub"></a>
+      <a href="https://www.hackerrank.com/profile/alperenkaracete" target="_blank"><img src="https://cdn.iconscout.com/icon/free/png-256/free-hackerrank-3628885-3030004.png" alt="HackerRank" width="32" height="32"></a>
+      <a href="mailto:m.alperenk@gmail.com"><img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email"></a>
     </div>
   </header>
 
-  <section class="about">
-    <h2>Hakkımda</h2>
-    <p>
-      Merhaba, ben bir oyun geliştiricisiyim. Unity ve Unreal Engine kullanarak 2D ve 3D oyunlar geliştiriyorum. Oyun mekaniği tasarımı, UI/UX, AI sistemleri gibi konularla ilgileniyorum.
+  <section class="about" style="
+    background-color: white;
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width: 800px;
+    border-radius: 16px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+  ">
+    <h2 style="
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      background: linear-gradient(to right, #66ccff, #3399ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    ">About Me</h2>
+    <p style="
+      font-size: 1.2rem;
+      line-height: 1.8;
+      color: #1a1a1a;
+      padding: 0 1rem;
+    ">
+      Hi, I’m a game developer. I develop 2D and 3D games using Unity and Unreal Engine.<br />
+      I’m interested in making video games.
     </p>
   </section>
 
@@ -113,12 +261,26 @@
     <button onclick="showSection('skills')">Skills</button>
   </nav>
 
-    <section id="content">
-    <div id="main-content" class="card">
-        <h3>Hoş Geldiniz!</h3>
-        <p>Yukarıdaki menüden bir bölüm seçin.</p>
-    </div>
-    </section>
+<section id="content">
+  <div id="main-content" class="card" style="
+    background-color: white;
+    color: black;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+  ">
+    <h3 style="
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+      background: linear-gradient(to right, #66ccff, #3399ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    ">Please select a section from the menu above.</h3>
+  </div>
+</section>
 
   <script>
     const content = document.getElementById('content');
@@ -126,164 +288,251 @@
     function showSection(section) {
       if (section === 'projects') {
         content.innerHTML = `
-          <div class="card">
-            <h3>🎮 Tank Savaşları</h3>
-            <p>Unreal Engine ile geliştirdiğim tank oyunu. Kule döndürme, nişan alma ve ateş mekanikleri içerir.</p>
-            <a href="https://github.com/kullaniciAdi/tank-savas" target="_blank">→ GitHub</a>
+          <p style="
+          text-align: center;
+          font-size: 1.2rem;
+          margin-bottom: 2rem;
+          color: #222;
+          background: linear-gradient(to right, #e0f7ff, #ffffff);
+          padding: 1rem;
+          border-radius: 10px;
+          box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        ">
+          👉 Click on any project image below to explore its details and demo video.
+        </p>
+          <div style="display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap;">
+            <!-- Teemothy Image Button -->
+            <img src="Images/Temoothy.png" alt="Tank Battles" style="width: 250px; height: auto; border-radius: 12px; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.2); transition: transform 0.2s ease;" onclick="showGameDetails('Teemothy')">
+
+            <!-- Puzzle Runner Image Button -->
+            <img src="puzzle.jpg" alt="Puzzle Runner" style="width: 250px; height: auto; border-radius: 12px; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.2); transition: transform 0.2s ease;" onclick="showGameDetails('puzzle')">
+
           </div>
-          <div class="card">
-            <h3>🧩 Puzzle Runner</h3>
-            <p>Unity ile geliştirdiğim mobil bulmaca-aksiyon oyunu.</p>
-            <a href="https://github.com/kullaniciAdi/puzzle-runner" target="_blank">→ GitHub</a>
-          </div>
+
+          <div id="game-details" style="margin-top: 2rem;"></div>
         `;
-      } else if (section === 'career') {
+      }
+      else if (section === 'career') {
         content.innerHTML = `
-            <div id="main-content">
-            <!-- Burada hakkımda veya diğer ana içerikler olabilir -->
+          <div id="main-content">
             <p>Welcome! Click on Career to explore work and education history.</p>
-            </div>
-            <div class="card">
+          </div>
+          <div class="card">
             <h3>📌 Employment and Internship History</h3>
 
             <h4>Bosphorus Industrial Software Solutions</h4>
             <p><strong>July 2024 – October 2024</strong></p>
             <ul>
-                <li>Used Yocto, RAUC, Yocto SDK, Nginx, C++, C++ REST SDK, ZeroMQ, and React.</li>
-                <li>Developed embedded software solutions for industrial IoT systems.</li>
+              <li>Used Yocto, RAUC, Yocto SDK, Nginx, C++, C++ REST SDK, ZeroMQ, and React.</li>
+              <li>Developed embedded software solutions for industrial IoT systems.</li>
             </ul>
 
             <h4>B2FB2F Research and Development Company</h4>
             <p><strong>August 2022 – March 2023</strong></p>
             <ul>
-                <li>Used AL Language and developed systems on Microsoft Dynamics Business Central and NAV.</li>
+              <li>Used AL Language and developed systems on Microsoft Dynamics Business Central and NAV.</li>
             </ul>
-            </div>
+          </div>
         `;
       } else if (section === 'skills') {
         content.innerHTML = `
-            <div class="card">
-            <h3>🛠️ Skills</h3>
-            <h4>Programming Languages</h4>
-            <ul>
-                <li>C, C++, C#</li>
-                <li>Java</li>
-                <li>Python</li>
-                <li>Dart</li>
-                <li>Assembly</li>
-                <li>AL Programming</li>
-            </ul>
+        <div class="card skills-card">
+          <h3 class="card-title">🛠️ Skills</h3>
 
-            <h4>Frameworks & Game Engines</h4>
+          <div class="skill-section">
+            <h4 class="skill-heading">Programming Languages</h4>
             <ul>
-                <li>Unity</li>
-                <li>Unreal Engine</li>
-                <li>Flutter</li>
-                <li>TensorFlow</li>
-                <li>React</li>
+              <li>C, C++, C#</li>
+              <li>Java</li>
+              <li>Python</li>
+              <li>Dart</li>
+              <li>Assembly</li>
+              <li>AL Programming</li>
             </ul>
+          </div>
 
-            <h4>Development Tools & Environments</h4>
+          <div class="skill-section">
+            <h4 class="skill-heading">Frameworks & Game Engines</h4>
             <ul>
-                <li>Android Studio</li>
-                <li>Jira</li>
-                <li>Git</li>
-                <li>Linux</li>
-                <li>Yocto</li>
-                <li>Nginx</li>
+              <li>Unity</li>
+              <li>Unreal Engine</li>
+              <li>Flutter</li>
+              <li>TensorFlow</li>
+              <li>React</li>
             </ul>
+          </div>
 
-            <h4>Databases & Backend</h4>
+          <div class="skill-section">
+            <h4 class="skill-heading">Development Tools & Environments</h4>
             <ul>
-                <li>Firebase</li>
-                <li>MySQL</li>
-                <li>SQL</li>
+              <li>Android Studio</li>
+              <li>Jira</li>
+              <li>Git</li>
+              <li>Linux</li>
+              <li>Yocto</li>
+              <li>Nginx</li>
             </ul>
+          </div>
 
-            <h4>Hardware & Embedded Systems</h4>
+          <div class="skill-section">
+            <h4 class="skill-heading">Databases & Backend</h4>
             <ul>
-                <li>Raspberry Pi</li>
-                <li>Arduino</li>
+              <li>Firebase</li>
+              <li>MySQL</li>
+              <li>SQL</li>
             </ul>
-            </div>
+          </div>
+
+          <div class="skill-section">
+            <h4 class="skill-heading">Hardware & Embedded Systems</h4>
+            <ul>
+              <li>Raspberry Pi</li>
+              <li>Arduino</li>
+            </ul>
+          </div>
+        </div>
         `;
       }
     }
   </script>
+
   <script>
-    function showCareerTabs() {
-    content.innerHTML = `
-        <div class="tab-buttons" style="display:flex; flex-direction:column; align-items:center; margin-bottom:1.5rem;">
-        <p style="text-align:center; color:#f0f0f0; font-size:1.1rem; margin-bottom:1rem;">
-            You can find information about my education and career here.
-        </p>
-        <div style="display:flex; justify-content:center; gap:1.5rem;">
-            <button onclick="showCareerSection('work')" style="
-            padding: 0.6rem 1.2rem;
-            border: none;
-            background: linear-gradient(to right, #66ccff, #3399ff);
-            color: white;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: bold;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: transform 0.2s, box-shadow 0.2s;
-            "
-            onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 6px 12px rgba(0,0,0,0.3)';"
-            onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 8px rgba(0,0,0,0.2)';"
-            >Work & Internship</button>
+function showCareerTabs() {
+  content.innerHTML = `
+    <div class="tab-buttons" style="display:flex; flex-direction:column; align-items:center; margin-bottom:1.5rem;">
+      <p style="text-align:center; color:black; font-size:1.1rem; margin-bottom:1rem;">
+        You can find information about my education and career here.
+      </p>
+      <div style="display:flex; justify-content:center; gap:1.5rem;">
+        <button onclick="showCareerSection('work')" style="
+          padding: 0.6rem 1.2rem;
+          border: none;
+          background: linear-gradient(to right, #66ccff, #3399ff);
+          color: white;
+          border-radius: 8px;
+          cursor: pointer;
+          font-weight: bold;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+          transition: transform 0.2s, box-shadow 0.2s;
+        "
+        onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 6px 12px rgba(0,0,0,0.3)';"
+        onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 8px rgba(0,0,0,0.2)';"
+        >Work & Internship</button>
 
-            <button onclick="showCareerSection('education')" style="
-            padding: 0.6rem 1.2rem;
-            border: none;
-            background: linear-gradient(to right, #66ccff, #3399ff);
-            color: white;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: bold;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: transform 0.2s, box-shadow 0.2s;
-            "
-            onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 6px 12px rgba(0,0,0,0.3)';"
-            onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 8px rgba(0,0,0,0.2)';"
-            >Education</button>
-        </div>
-        </div>
+        <button onclick="showCareerSection('education')" style="
+          padding: 0.6rem 1.2rem;
+          border: none;
+          background: linear-gradient(to right, #66ccff, #3399ff);
+          color: white;
+          border-radius: 8px;
+          cursor: pointer;
+          font-weight: bold;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+          transition: transform 0.2s, box-shadow 0.2s;
+        "
+        onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 6px 12px rgba(0,0,0,0.3)';"
+        onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 8px rgba(0,0,0,0.2)';"
+        >Education</button>
+      </div>
+    </div>
 
-        <div id="career-details" class="card" style="background:#1a1a1a; padding:1rem; border-radius:8px;"></div>
-    `;
-    }
-
-  function showCareerSection(section) {
-    const careerDetails = document.getElementById("career-details");
-    if (section === "work") {
-      careerDetails.innerHTML = `
-        <h3>📌 Employment and Internship History</h3>
-
-        <h4>Bosphorus Industrial Software Solutions</h4>
-        <p><strong>July 2024 – October 2024</strong></p>
-        <ul>
-          <li>Used Yocto, RAUC, Yocto SDK, Nginx, C++, C++ REST SDK, ZeroMQ, and React.</li>
-          <li>Developed embedded software solutions for industrial IoT systems.</li>
-        </ul>
-
-        <h4>B2F R&D Company</h4>
-        <p><strong>August 2022 – March 2023</strong></p>
-        <ul>
-          <li>Used AL Language and developed systems on Microsoft Dynamics Business Central and NAV.</li>
-        </ul>
-      `;
-    } else if (section === "education") {
-      careerDetails.innerHTML = `
-        <h3>🎓 Education</h3>
-
-        <h4>Istanbul Medeniyet University</h4>
-        <p><strong>Bachelor of Science in Computer Engineering</strong></p>
-        <p><strong>2019 – 2024</strong></p>
-      `;
-    }
+    <div id="career-details" class="skills-card" style="display: none;"></div>
+  `;
   }
+    function showCareerSection(section) {
+      const careerDetails = document.getElementById("career-details");
+      careerDetails.style.display = 'block';
+      if (section === "work") {
+        careerDetails.innerHTML = `...`;
+        careerDetails.innerHTML = `
+          <h3 class="card-title">📌 Employment and Internship History</h3>
+
+          <h4 class="skill-heading">Bosphorus Industrial Software Solutions</h4>
+          <p><strong>July 2024 – October 2024</strong></p>
+          <ul>
+            <li>Used Yocto, RAUC, Yocto SDK, Nginx, C++, C++ REST SDK, ZeroMQ, and React.</li>
+            <li>Developed embedded software solutions for industrial IoT systems.</li>
+          </ul>
+
+          <h4 class="skill-heading">B2F R&D Company</h4>
+          <p><strong>August 2022 – March 2023</strong></p>
+          <ul>
+            <li>Used AL Language and developed systems on Microsoft Dynamics Business Central and NAV.</li>
+          </ul>
+        `;
+      } else if (section === "education") {
+        careerDetails.innerHTML = `...`;
+        careerDetails.innerHTML = `
+          <h3 class="card-title">🎓 Education</h3>
+
+          <h4 class="skill-heading">Gebze Technical University</h4>
+          <p><strong>Bachelor of Science in Computer Science Engineering</strong></p>
+          <ul>
+          <li>2018 – 2024</li>
+          </ul>
+
+          <h4 class="skill-heading">Gebze Technical University</h4>
+          <p><strong>English Preparation Program</strong></p>
+          <ul>
+          <li>2017 – 2018</li>
+          </ul>
+        `;
+      }
+    }
+  function showGameDetails(game) {
+  const details = document.getElementById('game-details');
+
+  if (game === 'Teemothy') {
+    details.innerHTML = `
+      <div class="card" style="background-color: white; color: black; padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); margin-bottom: 1.5rem;">
+        <h3 style="font-size: 1.4rem;">🎮 Teemothy</h3>
+        <h2 style="font-size: 1.2rem;">Summary:</h2>
+        <p>A third-person game prototype developed in Unity. The project focuses on core gameplay mechanics such as movement, pause/resume system, dynamic camera shake, UI transitions, and more.</p>
+        <a href="https://github.com/alperenkaracete/Temoothy" target="_blank" style="display:inline-block; background:linear-gradient(to right,#66ccff,#3399ff); color:white; padding:0.5rem 1rem; border-radius:8px; text-decoration:none; font-weight:bold; margin-bottom:1rem;">→ GitHub</a>
+        <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; margin-top:1rem; border-radius:12px;">
+          <iframe 
+            src="https://www.youtube.com/embed/ERTocbTElkI" 
+            frameborder="0" 
+            allowfullscreen 
+            style="position:absolute; top:0; left:0; width:100%; height:100%;">
+          </iframe>
+        </div>
+        <h2 style="font-size: 1.2rem; margin-bottom: 0.5rem;">Details:</h2>
+        <ul style="list-style: none; padding: 0; color: black;">
+          <li>🎮 <strong>Character Movement:</strong> Smooth player movement with Rigidbody physics.</li>
+          <li>🐱 <strong>Chaser AI:</strong> Simple AI with NavMeshAgent. Cat follows chick when player enters floor.</li>
+          <li>⏸️ <strong>Pause/Resume System:</strong> Game can be paused and resumed with saved velocity.</li>
+          <li>🔊 <strong>Audio Manager:</strong> Centralized sound system with volume controls for effects/music.</li>
+          <li>🎥 <strong>Camera Shake:</strong> Cinemachine-based shake effect triggered on damage or death.</li>
+          <li>🎬 <strong>Cutscene Support:</strong> Optional camera transitions for cinematic sequences.</li>
+          <li>🧭 <strong>Scene Transitions:</strong> Smooth fades between scenes via a TransitionManager.</li>
+          <li>⚙️ <strong>Settings Menu:</strong> Toggle sound on/off and adjust volume via UI buttons.</li>
+          <li>🎮 <strong>Main Menu:</strong> Start game, quit, view credits, or access how-to-play instructions.</li>
+          <li>📜 <strong>Event System:</strong> Uses Unity Events for decoupled UI and logic.</li>
+          <li>🖥️📱 <strong>Cross-Platform Support:</strong> Fully playable on both PC and Android.</li>
+        </ul>
+      </div>
+    `;
+  }
+  else if (game === 'puzzle') {
+        details.innerHTML = `
+          <div class="card" style="background-color: white; color: black; padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1.4rem;">🧩 Puzzle Runner</h3>
+            <p>A mobile puzzle-action game developed with Unity.</p>
+            <a href="https://github.com/kullaniciAdi/puzzle-runner" target="_blank" style="display:inline-block; background:linear-gradient(to right,#66ccff,#3399ff); color:white; padding:0.5rem 1rem; border-radius:8px; text-decoration:none; font-weight:bold; margin-bottom:1rem;">→ GitHub</a>
+            <div style="margin-top: 1rem;">
+              <video width="100%" controls>
+                <source src="puzzle-video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        `;
+      }
+    }
+
   </script>
+  
 
 </body>
 </html>
