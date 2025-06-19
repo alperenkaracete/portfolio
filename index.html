@@ -302,10 +302,13 @@
         </p>
           <div style="display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap;">
             <!-- Teemothy Image Button -->
-            <img src="Images/Temoothy.png" alt="Tank Battles" style="width: 250px; height: auto; border-radius: 12px; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.2); transition: transform 0.2s ease;" onclick="showGameDetails('Teemothy')">
+            <img src="Images/Temoothy.png" alt="Platformer" style="width: 250px; height: auto; border-radius: 12px; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.2); transition: transform 0.2s ease;" onclick="showGameDetails('Teemothy')">
 
-            <!-- Puzzle Runner Image Button -->
-            <img src="puzzle.jpg" alt="Puzzle Runner" style="width: 250px; height: auto; border-radius: 12px; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.2); transition: transform 0.2s ease;" onclick="showGameDetails('puzzle')">
+            <!-- RoboCarGo Runner Image Button -->
+            <img src="Images/RoboCarGo.png" alt="Car" style="width: 250px; height: auto; border-radius: 12px; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.2); transition: transform 0.2s ease;" onclick="showGameDetails('RoboCarGo')">
+
+            <!-- Ski On Alps With Alp Image Button -->
+            <img src="Images/SkiOnAlpsWithAlp.png" alt="Ski" style="width: 250px; height: auto; border-radius: 12px; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.2); transition: transform 0.2s ease;" onclick="showGameDetails('SkiAlps')">
 
           </div>
 
@@ -514,21 +517,89 @@ function showCareerTabs() {
       </div>
     `;
   }
-  else if (game === 'puzzle') {
+  else if (game === 'RoboCarGo') {
         details.innerHTML = `
           <div class="card" style="background-color: white; color: black; padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); margin-bottom: 1.5rem;">
-            <h3 style="font-size: 1.4rem;">🧩 Puzzle Runner</h3>
-            <p>A mobile puzzle-action game developed with Unity.</p>
-            <a href="https://github.com/kullaniciAdi/puzzle-runner" target="_blank" style="display:inline-block; background:linear-gradient(to right,#66ccff,#3399ff); color:white; padding:0.5rem 1rem; border-radius:8px; text-decoration:none; font-weight:bold; margin-bottom:1rem;">→ GitHub</a>
-            <div style="margin-top: 1rem;">
-              <video width="100%" controls>
-                <source src="puzzle-video.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
+            <h3 style="font-size: 1.4rem;">🚗 RoboCarGo</h3>
+
+            <h2 style="font-size: 1.2rem;">Summary:</h2>
+            <p>A fun and colorful cargo delivery game. Control a robot car and deliver color-coded packages to the correct customers.</p>
+
+            <a href="https://github.com/alperenkaracete/RoboCarGo" target="_blank" style="
+              display:inline-block;
+              background:linear-gradient(to right,#66ccff,#3399ff);
+              color:white;
+              padding:0.5rem 1rem;
+              border-radius:8px;
+              text-decoration:none;
+              font-weight:bold;
+              margin-bottom:1rem;">
+              → GitHub
+            </a>
+
+            <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; margin-top:1rem; border-radius:12px;">
+              <iframe 
+                src="https://www.youtube.com/embed/qBhOFV2i1EM" 
+                frameborder="0" 
+                allowfullscreen 
+                style="position:absolute; top:0; left:0; width:100%; height:100%;">
+              </iframe>
             </div>
+
+            <h2 style="font-size: 1.2rem; margin-top: 1rem;">Details:</h2>
+            <ul style="list-style: none; padding: 0; color: black;">
+              <li>🎮 <strong>Pick-Up Mechanic:</strong> Car changes color to match the picked-up cargo.</li>
+              <li>🎯 <strong>Delivery Logic:</strong> Match cargo with correct customer by color.</li>
+              <li>🔄 <strong>Reset Mechanism:</strong> Car returns to blue after each delivery.</li>
+              <li>📦 <strong>Package Info:</strong> Displays cargo color and remaining deliveries.</li>
+              <li>🚫 <strong>One-at-a-Time Rule:</strong> Only one package can be carried at once.</li>
+              <li>🏁 <strong>Victory Screen:</strong> Shown when all packages are successfully delivered.</li>
+            </ul>
           </div>
         `;
       }
+  else if (game === 'SkiAlps') {
+        details.innerHTML = `
+          <div class="card" style="background-color: white; color: black; padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1.4rem;">🎿 Alp Skis</h3>
+
+            <h2 style="font-size: 1.2rem;">Summary:</h2>
+            <p>Join Alp, a fearless skier, in a fast-paced skiing adventure full of flips, slides, and thrilling stunts!</p>
+
+            <a href="https://github.com/alperenkaracete/SkiOnAlpsWithAlp" target="_blank" style="
+              display:inline-block;
+              background:linear-gradient(to right,#66ccff,#3399ff);
+              color:white;
+              padding:0.5rem 1rem;
+              border-radius:8px;
+              text-decoration:none;
+              font-weight:bold;
+              margin-bottom:1rem;">
+              → GitHub
+            </a>
+
+            <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; margin-top:1rem; border-radius:12px;">
+              <iframe 
+                src="https://www.youtube.com/embed/xDD4X4ph7BU" 
+                frameborder="0" 
+                allowfullscreen 
+                style="position:absolute; top:0; left:0; width:100%; height:100%;">
+              </iframe>
+            </div>
+
+            <h2 style="font-size: 1.2rem; margin-top: 1rem;">Details:</h2>
+            <ul style="list-style: none; padding: 0; color: black;">
+              <li>⛷️ <strong>Acceleration:</strong> Hold the Up Arrow to gain speed.</li>
+              <li>🎯 <strong>Trick Controls:</strong> Use Left/Right Arrows to perform mid-air spins and flips.</li>
+              <li>📉 <strong>Fail Mechanic:</strong> Land safely or the run ends.</li>
+              <li>📊 <strong>Score System:</strong> Tracks number of successful spins at run's end.</li>
+              <li>✨ <strong>Visual Effects:</strong> Dynamic particles enhance action and landings.</li>
+              <li>🔊 <strong>Audio Design:</strong> Immersive soundscapes complement gameplay.</li>
+              <li>🎮 <strong>Challenge:</strong> Test your reflexes and try to set a new high score!</li>
+            </ul>
+          </div>
+        `;
+      }      
     }
 
   </script>
